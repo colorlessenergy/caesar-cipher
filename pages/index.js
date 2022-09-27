@@ -46,6 +46,7 @@ const caesarCipher = ({ direction, move, text }) => {
 export default function Home() {
     const [direction, setDirection] = useState('right');
     const [move, setMove] = useState(1);
+    const [encryptOrDecrypt, setEncryptOrDecrypt] = useState('encrypt');
 
     return (
         <div>
@@ -79,7 +80,10 @@ export default function Home() {
                         <Move move={move} setMove={setMove} />
                     </div>
 
-                    <EncryptOrDecrypt />
+                    <EncryptOrDecrypt
+                        encryptOrDecrypt={encryptOrDecrypt}
+                        setEncryptOrDecrypt={setEncryptOrDecrypt}
+                    />
 
                     <label htmlFor="plain-text" className="mb-1">
                         plain text

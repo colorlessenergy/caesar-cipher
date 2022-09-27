@@ -1,4 +1,11 @@
-export default function EncryptOrDecrypt() {
+export default function EncryptOrDecrypt({
+    encryptOrDecrypt,
+    setEncryptOrDecrypt
+}) {
+    const handleChange = event => {
+        setEncryptOrDecrypt(event.currentTarget.value);
+    };
+
     return (
         <div className="mb-2">
             <div className="mb-1">encrypt or decrypt</div>
@@ -10,6 +17,8 @@ export default function EncryptOrDecrypt() {
                     className="d-none"
                     name="encrypt-decrypt"
                     value="encrypt"
+                    onChange={handleChange}
+                    checked={encryptOrDecrypt === 'encrypt'}
                 />
                 <label className="radio-input mr-1" htmlFor="encrypt"></label>
                 <label htmlFor="encrypt" className="mr-2">
@@ -22,6 +31,8 @@ export default function EncryptOrDecrypt() {
                     className="d-none"
                     name="encrypt-decrypt"
                     value="decrypt"
+                    onChange={handleChange}
+                    checked={encryptOrDecrypt === 'decrypt'}
                 />
                 <label className="radio-input mr-1" htmlFor="decrypt"></label>
                 <label htmlFor="decrypt">decrypt</label>
