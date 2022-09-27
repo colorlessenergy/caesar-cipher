@@ -6,7 +6,11 @@ import Move from '../components/Home/Move';
 import EncryptOrDecrypt from '../components/Home/EncryptOrDecrypt';
 import Text from '../components/Home/Text';
 
-const caesarCipherEncrypt = ({ direction, move, text }) => {
+const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
+    if (encryptOrDecrypt === 'decrypt') {
+        direction = 'left';
+    }
+
     const A_CHAR_CODE = 97;
     const Z_CHAR_CODE = 122;
     if (direction === 'right') {
@@ -58,9 +62,9 @@ export default function Home() {
     const [modifiedText, setModifiedText] = useState('');
 
     useEffect(() => {
-        if (encryptOrDecrypt === 'encrypt') {
-            setModifiedText(caesarCipherEncrypt({ direction, move, text }));
-        }
+        setModifiedText(
+            caesarCipher({ encryptOrDecrypt, direction, move, text })
+        );
     }, [direction, move, encryptOrDecrypt, text]);
 
     return (
