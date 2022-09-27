@@ -1,0 +1,20 @@
+.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark .radio-input,
+.dark .input-move,
+.dark textarea {
+    border-color: #505050;
+}
+
+.dark input,
+.dark textarea {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.dark svg {
+    fill: #ffffff;
+}
