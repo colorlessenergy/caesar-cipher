@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 
 import Direction from '../components/Home/Direction';
@@ -41,6 +42,8 @@ const caesarCipher = ({ direction, move, text }) => {
 };
 
 export default function Home() {
+    const [direction, setDirection] = useState('right');
+
     return (
         <div>
             <Head>
@@ -65,7 +68,10 @@ export default function Home() {
                 </div>
                 <form>
                     <div className="flex-flow">
-                        <Direction />
+                        <Direction
+                            direction={direction}
+                            setDirection={setDirection}
+                        />
 
                         <div>
                             <label htmlFor="move" className="mb-1">

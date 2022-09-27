@@ -1,4 +1,8 @@
-export default function Direction() {
+export default function Direction({ direction, setDirection }) {
+    const handleChange = event => {
+        setDirection(event.currentTarget.value);
+    };
+
     return (
         <div className="mb-2">
             <div className="mb-1">direction</div>
@@ -10,6 +14,8 @@ export default function Direction() {
                     className="d-none"
                     name="direction"
                     value="left"
+                    onChange={handleChange}
+                    checked={direction === 'left'}
                 />
                 <label className="radio-input mr-1" htmlFor="left"></label>
                 <label htmlFor="left" className="mr-2">
@@ -22,6 +28,8 @@ export default function Direction() {
                     className="d-none"
                     name="direction"
                     value="right"
+                    onChange={handleChange}
+                    checked={direction === 'right'}
                 />
                 <label className="radio-input mr-1" htmlFor="right"></label>
                 <label htmlFor="right">right</label>
