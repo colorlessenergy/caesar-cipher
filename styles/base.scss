@@ -33,6 +33,7 @@ input {
 }
 
 textarea {
+    border: 1px solid $gray;
     min-height: 200px;
     width: 100%;
     padding: $space-2;
