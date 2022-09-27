@@ -7,10 +7,6 @@ import EncryptOrDecrypt from '../components/Home/EncryptOrDecrypt';
 import Text from '../components/Home/Text';
 
 const caesarCipherEncrypt = ({ direction, move, text }) => {
-    if (move !== 1) {
-        move = move - 1;
-    }
-
     const A_CHAR_CODE = 97;
     const Z_CHAR_CODE = 122;
     if (direction === 'right') {
@@ -20,7 +16,11 @@ const caesarCipherEncrypt = ({ direction, move, text }) => {
             let charCode = character.charCodeAt(0);
             if (charCode + move > Z_CHAR_CODE) {
                 const remaining = charCode + move - Z_CHAR_CODE;
-                charCode = A_CHAR_CODE + remaining;
+                if (remaining === 1) {
+                    charCode = A_CHAR_CODE;
+                } else {
+                    charCode = A_CHAR_CODE + remaining;
+                }
             } else {
                 charCode += move;
             }
@@ -36,7 +36,11 @@ const caesarCipherEncrypt = ({ direction, move, text }) => {
             let charCode = character.charCodeAt(0);
             if (charCode - move < A_CHAR_CODE) {
                 const remaining = A_CHAR_CODE - (charCode - move);
-                charCode = Z_CHAR_CODE - remaining;
+                if (remaining === 1) {
+                    charCode = Z_CHAR_CODE;
+                } else {
+                    charCode = Z_CHAR_CODE - remaining;
+                }
             } else {
                 charCode -= move;
             }
