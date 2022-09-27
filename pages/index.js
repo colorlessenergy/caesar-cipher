@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Direction from '../components/Home/Direction';
 import Move from '../components/Home/Move';
 import EncryptOrDecrypt from '../components/Home/EncryptOrDecrypt';
+import Text from '../components/Home/Text';
 
 const caesarCipher = ({ direction, move, text }) => {
     move = move - 1;
@@ -85,10 +86,7 @@ export default function Home() {
                         setEncryptOrDecrypt={setEncryptOrDecrypt}
                     />
 
-                    <label htmlFor="plain-text" className="mb-1">
-                        plain text
-                    </label>
-                    <textarea id="plain-text"></textarea>
+                    <Text />
                 </form>
 
                 <h2>encrypted text</h2>
