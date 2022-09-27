@@ -44,6 +44,7 @@ const caesarCipher = ({ direction, move, text }) => {
 
 export default function Home() {
     const [direction, setDirection] = useState('right');
+    const [move, setMove] = useState(1);
 
     return (
         <div>
@@ -74,7 +75,7 @@ export default function Home() {
                             setDirection={setDirection}
                         />
 
-                        <Move />
+                        <Move move={move} setMove={setMove} />
                     </div>
 
                     <div className="mb-2">
