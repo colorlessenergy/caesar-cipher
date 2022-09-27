@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 
 import Direction from '../components/Home/Direction';
+import Move from '../components/Home/Move';
 
 const caesarCipher = ({ direction, move, text }) => {
     move = move - 1;
@@ -73,18 +74,7 @@ export default function Home() {
                             setDirection={setDirection}
                         />
 
-                        <div>
-                            <label htmlFor="move" className="mb-1">
-                                move
-                            </label>
-                            <input
-                                className="input-move"
-                                type="number"
-                                id="move"
-                                min="1"
-                                max="25"
-                            />
-                        </div>
+                        <Move />
                     </div>
 
                     <div className="mb-2">
