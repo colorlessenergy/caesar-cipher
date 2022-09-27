@@ -34,6 +34,7 @@ input {
 
 textarea {
     border: 1px solid $gray;
+    border-radius: 2px;
     min-height: 200px;
     width: 100%;
     padding: $space-2;
