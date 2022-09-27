@@ -83,7 +83,7 @@ export default function Home() {
                     <Theme />
                 </div>
                 <form>
-                    <div className="flex-flow">
+                    <div className="flex-flow mb-2">
                         <Direction
                             direction={direction}
                             setDirection={setDirection}

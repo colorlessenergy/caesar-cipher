@@ -4,7 +4,7 @@ export default function Direction({ direction, setDirection }) {
     };
 
     return (
-        <div className="mb-2">
+        <div>
             <div className="mb-1">direction</div>
 
             <div className="flex-center">
