@@ -1,5 +1,13 @@
 export default function Move({ move, setMove }) {
     const handleChange = event => {
+        if (event.currentTarget.valueAsNumber < 1) {
+            return setMove(1);
+        }
+
+        if (event.currentTarget.valueAsNumber > 25) {
+            return setMove(25);
+        }
+
         setMove(event.currentTarget.valueAsNumber);
     };
 
