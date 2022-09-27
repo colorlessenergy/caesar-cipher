@@ -97,10 +97,18 @@ export default function Home() {
                         setEncryptOrDecrypt={setEncryptOrDecrypt}
                     />
 
-                    <Text text={text} setText={setText} />
+                    <Text
+                        text={text}
+                        setText={setText}
+                        encryptOrDecrypt={encryptOrDecrypt}
+                    />
                 </form>
 
-                <h2>encrypted text</h2>
+                <h2>
+                    {encryptOrDecrypt === 'encrypt'
+                        ? 'encrypted text'
+                        : 'decrypted text'}
+                </h2>
 
                 <p>{modifiedText}</p>
             </div>
