@@ -1,0 +1,36 @@
+@use 'variables.scss' as *;
+
+.container {
+    margin: 0 $space-2;
+    max-width: 800px;
+}
+
+.radio-input {
+    border: 1px solid $gray;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+
+    cursor: pointer;
+}
+
+input[type='radio']:checked + .radio-input {
+    border: none;
+
+    background-color: $red;
+}
+
+.input-move {
+    border: 1px solid $gray;
+    border-radius: 2px;
+    display: block;
+    min-width: 60px;
+    padding: 4px 6px;
+}
+
+@media (min-width: 800px) {
+    .container {
+        margin: 0 auto;
+    }
+}

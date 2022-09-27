@@ -1,0 +1,32 @@
+@use './variables.scss' as *;
+
+.d-none {
+    display: none;
+}
+
+.mr-1 {
+    margin-right: $space-1;
+}
+
+.mr-2 {
+    margin-right: $space-2;
+}
+
+.mb-1 {
+    margin-bottom: $space-1;
+}
+
+.mb-2 {
+    margin-bottom: $space-2;
+}
+
+.flex-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
