@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import Direction from '../components/Home/Direction';
@@ -7,7 +7,9 @@ import EncryptOrDecrypt from '../components/Home/EncryptOrDecrypt';
 import Text from '../components/Home/Text';
 
 const caesarCipher = ({ direction, move, text }) => {
-    move = move - 1;
+    if (move !== 1) {
+        move = move - 1;
+    }
 
     const A_CHAR_CODE = 97;
     const Z_CHAR_CODE = 122;
@@ -49,6 +51,11 @@ export default function Home() {
     const [move, setMove] = useState(1);
     const [encryptOrDecrypt, setEncryptOrDecrypt] = useState('encrypt');
     const [text, setText] = useState('');
+    const [modifiedText, setModifiedText] = useState('');
+
+    useEffect(() => {
+        setModifiedText(caesarCipher({ direction, move, text }));
+    }, [direction, move, encryptOrDecrypt, text]);
 
     return (
         <div>
@@ -91,6 +98,8 @@ export default function Home() {
                 </form>
 
                 <h2>encrypted text</h2>
+
+                <p>{modifiedText}</p>
             </div>
         </div>
     );
