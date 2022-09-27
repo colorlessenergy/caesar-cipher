@@ -48,6 +48,7 @@ export default function Home() {
     const [direction, setDirection] = useState('right');
     const [move, setMove] = useState(1);
     const [encryptOrDecrypt, setEncryptOrDecrypt] = useState('encrypt');
+    const [text, setText] = useState('');
 
     return (
         <div>
@@ -86,7 +87,7 @@ export default function Home() {
                         setEncryptOrDecrypt={setEncryptOrDecrypt}
                     />
 
-                    <Text />
+                    <Text text={text} setText={setText} />
                 </form>
 
                 <h2>encrypted text</h2>
