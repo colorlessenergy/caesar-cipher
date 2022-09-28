@@ -9,7 +9,11 @@ import Text from '../components/Home/Text';
 
 const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
     if (encryptOrDecrypt === 'decrypt') {
-        direction = 'left';
+        if (direction === 'right') {
+            direction = 'left';
+        } else if (direction === 'left') {
+            direction = 'right';
+        }
     }
 
     text = text.toLowerCase();
