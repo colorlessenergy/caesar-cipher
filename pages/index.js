@@ -20,12 +20,8 @@ const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
 
             let charCode = character.charCodeAt(0);
             if (charCode + move > Z_CHAR_CODE) {
-                const remaining = charCode + move - Z_CHAR_CODE;
-                if (remaining === 1) {
-                    charCode = A_CHAR_CODE;
-                } else {
-                    charCode = A_CHAR_CODE + remaining;
-                }
+                const remaining = charCode + move - Z_CHAR_CODE - 1;
+                charCode = A_CHAR_CODE + remaining;
             } else {
                 charCode += move;
             }
@@ -40,12 +36,8 @@ const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
 
             let charCode = character.charCodeAt(0);
             if (charCode - move < A_CHAR_CODE) {
-                const remaining = A_CHAR_CODE - (charCode - move);
-                if (remaining === 1) {
-                    charCode = Z_CHAR_CODE;
-                } else {
-                    charCode = Z_CHAR_CODE - remaining;
-                }
+                const remaining = A_CHAR_CODE - (charCode - move) - 1;
+                charCode = Z_CHAR_CODE - remaining;
             } else {
                 charCode -= move;
             }
