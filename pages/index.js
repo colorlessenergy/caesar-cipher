@@ -18,9 +18,10 @@ const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
     const Z_CHAR_CODE = 122;
     if (direction === 'right') {
         return text.split('').map(character => {
-            if (character === ' ') return character;
-
             let charCode = character.charCodeAt(0);
+            if (charCode < A_CHAR_CODE || charCode > Z_CHAR_CODE) {
+                return character;
+            }
             if (charCode + move > Z_CHAR_CODE) {
                 const remaining = charCode + move - Z_CHAR_CODE - 1;
                 charCode = A_CHAR_CODE + remaining;
@@ -34,9 +35,10 @@ const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
 
     if (direction === 'left') {
         return text.split('').map(character => {
-            if (character === ' ') return character;
-
             let charCode = character.charCodeAt(0);
+            if (charCode < A_CHAR_CODE || charCode > Z_CHAR_CODE) {
+                return character;
+            }
             if (charCode - move < A_CHAR_CODE) {
                 const remaining = A_CHAR_CODE - (charCode - move) - 1;
                 charCode = Z_CHAR_CODE - remaining;
