@@ -12,6 +12,8 @@ const caesarCipher = ({ encryptOrDecrypt, direction, move, text }) => {
         direction = 'left';
     }
 
+    text = text.toLowerCase();
+
     const A_CHAR_CODE = 97;
     const Z_CHAR_CODE = 122;
     if (direction === 'right') {
