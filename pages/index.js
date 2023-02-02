@@ -60,13 +60,6 @@ export default function Home() {
     const [move, setMove] = useState(1);
     const [encryptOrDecrypt, setEncryptOrDecrypt] = useState('encrypt');
     const [text, setText] = useState('');
-    const [modifiedText, setModifiedText] = useState('');
-
-    useEffect(() => {
-        setModifiedText(
-            caesarCipher({ encryptOrDecrypt, direction, move, text })
-        );
-    }, [direction, move, encryptOrDecrypt, text]);
 
     return (
         <div>
@@ -110,7 +103,9 @@ export default function Home() {
                         : 'decrypted text'}
                 </h2>
 
-                <p>{modifiedText}</p>
+                <p>
+                    {caesarCipher({ encryptOrDecrypt, direction, move, text })}
+                </p>
             </div>
         </div>
     );
